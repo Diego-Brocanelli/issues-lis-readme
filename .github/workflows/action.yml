@@ -22,7 +22,7 @@ jobs:
        uses: actions/checkout@v2
        with:
          repository: Diego-Brocanelli/issues-lis-readme
-         path: main
+         #path: main
      - name: rewriteReadme
        uses: seed-of-apricot/issue-list-readme@v1.1.0
        with:
