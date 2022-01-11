@@ -7,7 +7,7 @@ on:
     types: [opened, edited, closed, deleted]
     
 permissions:
-  contents: read
+  contents: write
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
