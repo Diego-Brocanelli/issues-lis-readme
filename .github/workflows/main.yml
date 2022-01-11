@@ -18,7 +18,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: issues-list
+    - name: Auto Issue List in README
       # You may pin to the exact commit or the version.
       # uses: seed-of-apricot/issue-list-readme@55669b219cbd65d46522bd6dde3067b8d1df3c5f
       uses: seed-of-apricot/issue-list-readme@v1.1.0
@@ -26,8 +26,8 @@ jobs:
         # token
         GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
         # pattern to detect the place to locate the table
-        pattern: '<!-- issueTable -->'
+        #pattern: '<!-- issueTable -->'
         # comma-separated labels to filter the issues
-        labels: 'idea'
+        #labels: 'idea'
         # state of the issues to filter them (open or closed)
-        state: 'open'
+        #state: 'open'
