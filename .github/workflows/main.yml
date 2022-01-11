@@ -18,17 +18,22 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Auto Issue List in README
-      # You may pin to the exact commit or the version.
-      # uses: seed-of-apricot/issue-list-readme@55669b219cbd65d46522bd6dde3067b8d1df3c5f
-      #uses: seed-of-apricot/issue-list-readme@v1.1.0
-      uses: oddcc/issue-list-readme@v0.0.1
-      with:
-        # token
-        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-        # pattern to detect the place to locate the table
-        #pattern: '<!-- issueTable -->'
-        # comma-separated labels to filter the issues
-        #labels: 'idea'
-        # state of the issues to filter them (open or closed)
-        #state: 'open'
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: rewriteReadme
+        uses: Diego-Brocanelli/issues-lis-readme@master
+        with:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          pattern: "<!-- issueTableDemo -->"
+          labels: "idea"
+          state: "open"
+      - name: add-and-commit
+        uses: EndBug/add-and-commit@v4
+        with:
+          message: README.md has been re-written
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
