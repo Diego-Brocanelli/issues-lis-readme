@@ -21,7 +21,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: rewriteReadme
-        uses: Diego-Brocanelli/issues-lis-readme@master
+        uses: Diego-Brocanelli/issues-lis-readme@main
         with:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           pattern: "<!-- issueTableDemo -->"
