@@ -20,6 +20,9 @@ jobs:
     steps:
      - name: checkout
        uses: actions/checkout@v2
+       with:
+         repository: Diego-Brocanelli/issues-lis-readme
+         path: issues-lis-readme
      - name: rewriteReadme
        uses: seed-of-apricot/issue-list-readme@v1.1.0
        with:
