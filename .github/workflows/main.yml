@@ -24,7 +24,7 @@ jobs:
         uses: Diego-Brocanelli/issues-lis-readme@main
         with:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          pattern: "<!-- issueTableDemo -->"
+          pattern: "<!-- issueTable -->"
           labels: "idea"
           state: "open"
       #- name: add-and-commit
